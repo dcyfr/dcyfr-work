@@ -1,0 +1,109 @@
+[
+  {
+    "id": "agent-run",
+    "command": "dcyfr agent run",
+    "description": "Run a workspace agent on a given task. Streams output to stdout and writes a structured run record to ~/.dcyfr/runs/.",
+    "usage": "dcyfr agent run <agentId> --intent <intent> [--input <json>] [--timeout <ms>]",
+    "flags": [
+      { "flag": "--intent", "alias": "-i", "description": "Task intent string (what you want the agent to accomplish)", "required": true },
+      { "flag": "--input", "description": "JSON object of inputs to pass to the agent", "required": false },
+      { "flag": "--timeout", "alias": "-t", "description": "Maximum execution time in milliseconds (default: 60000)", "required": false },
+      { "flag": "--no-stream", "description": "Disable streaming output; print final result only", "required": false }
+    ],
+    "examples": [
+      "dcyfr agent run documentation-expert --intent 'Generate API reference for ./src/auth'",
+      "dcyfr agent run security-engineer --intent 'Audit for OWASP Top 10' --input '{\"path\":\"./src\"}'",
+      "dcyfr agent run test-engineer --intent 'Add unit tests for PaymentService' --timeout 120000"
+    ],
+    "package": "@dcyfr/ai-cli",
+    "since": "0.3.0"
+  },
+  {
+    "id": "agent-list",
+    "command": "dcyfr agent list",
+    "description": "List all available workspace agents with their categories, TLP clearance, and reputation scores.",
+    "usage": "dcyfr agent list [--category <category>] [--json]",
+    "flags": [
+      { "flag": "--category", "alias": "-c", "description": "Filter by agent category (frontend/backend/infrastructure/security/governance)", "required": false },
+      { "flag": "--json", "description": "Output as JSON array", "required": false }
+    ],
+    "examples": [
+      "dcyfr agent list",
+      "dcyfr agent list --category security",
+      "dcyfr agent list --json | jq '.[].agentId'"
+    ],
+    "package": "@dcyfr/ai-cli",
+    "since": "0.1.0"
+  },
+  {
+    "id": "delegate",
+    "command": "dcyfr delegate",
+    "description": "Create and execute a typed delegation contract. Validates inputs against the agent's manifest schema before dispatch.",
+    "usage": "dcyfr delegate --to <agentId> --intent <intent> [--fallback <behavior>]",
+    "flags": [
+      { "flag": "--to", "description": "Target agent ID", "required": true },
+      { "flag": "--intent", "alias": "-i", "description": "Intent string describing the task", "required": true },
+      { "flag": "--fallback", "description": "Fallback behavior on failure: abort | return-partial | retry (default: abort)", "required": false },
+      { "flag": "--dry-run", "description": "Validate the delegation contract without executing", "required": false }
+    ],
+    "examples": [
+      "dcyfr delegate --to documentation-expert --intent 'Document the ./lib/auth module'",
+      "dcyfr delegate --to worktree-coordinator --intent 'Set up isolation for 3 parallel changes' --fallback return-partial",
+      "dcyfr delegate --to security-engineer --intent 'Scan for secrets in git history' --dry-run"
+    ],
+    "package": "@dcyfr/ai-cli",
+    "since": "0.3.0"
+  },
+  {
+    "id": "runs-list",
+    "command": "dcyfr runs list",
+    "description": "Show recent agent run records from ~/.dcyfr/runs/. Displays status, agent, duration, and token usage.",
+    "usage": "dcyfr runs list [--all] [--agent <agentId>] [--prune <days>]",
+    "flags": [
+      { "flag": "--all", "description": "Show all runs (default: last 20)", "required": false },
+      { "flag": "--agent", "description": "Filter runs by agent ID", "required": false },
+      { "flag": "--prune", "description": "Delete runs older than N days and exit", "required": false }
+    ],
+    "examples": [
+      "dcyfr runs list",
+      "dcyfr runs list --agent documentation-expert",
+      "dcyfr runs list --all --agent security-engineer",
+      "dcyfr runs list --prune 7"
+    ],
+    "package": "@dcyfr/ai-cli",
+    "since": "0.2.0"
+  },
+  {
+    "id": "workspace-health",
+    "command": "dcyfr workspace health",
+    "description": "Run a workspace health check. Verifies Intelligence Gateway connectivity, agent availability, npm dependency freshness, and TLP policy file presence.",
+    "usage": "dcyfr workspace health [--json] [--fix]",
+    "flags": [
+      { "flag": "--json", "description": "Output results as JSON", "required": false },
+      { "flag": "--fix", "description": "Attempt to auto-fix warning-level issues (e.g. reinstall missing packages)", "required": false }
+    ],
+    "examples": [
+      "dcyfr workspace health",
+      "dcyfr workspace health --json",
+      "dcyfr workspace health --fix"
+    ],
+    "package": "@dcyfr/ai-cli",
+    "since": "0.4.0"
+  },
+  {
+    "id": "openspec-new",
+    "command": "dcyfr openspec new",
+    "description": "Create a new OpenSpec change directory with all required artifact stubs (proposal.md, design.md, tasks.md, specs/).",
+    "usage": "dcyfr openspec new <change-name> [--tlp <GREEN|AMBER|RED>]",
+    "flags": [
+      { "flag": "--tlp", "description": "TLP classification for all artifacts (default: AMBER)", "required": false }
+    ],
+    "examples": [
+      "dcyfr openspec new my-new-feature",
+      "dcyfr openspec new public-api-redesign --tlp GREEN",
+      "dcyfr openspec new internal-auth-refactor --tlp AMBER"
+    ],
+    "package": "@dcyfr/ai-cli",
+    "since": "0.4.0"
+  }
+]
