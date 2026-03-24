@@ -142,10 +142,10 @@ export default function HomePage() {
                 <h3 className="font-semibold text-slate-100 group-hover:text-white transition-colors leading-tight">
                   {ext.name}
                 </h3>
-                <span className="shrink-0 ml-2 text-xs text-slate-500 font-mono">v{ext.version}</span>
+                <span className="shrink-0 ml-2 text-xs text-slate-400 font-mono">v{ext.version}</span>
               </div>
               <p className="text-sm text-slate-400 mb-3 leading-relaxed line-clamp-2">{ext.description}</p>
-              <div className="flex items-center justify-between text-xs text-slate-500">
+              <div className="flex items-center justify-between text-xs text-slate-400">
                 <span>{ext.category}</span>
                 <span>{'★'.repeat(Math.round(ext.rating))} {ext.rating}</span>
               </div>

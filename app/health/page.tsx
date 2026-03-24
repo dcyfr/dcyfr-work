@@ -129,7 +129,7 @@ export default function HealthPage() {
                     </span>
                     <span className="text-sm text-slate-200">{check.name}</span>
                   </div>
-                  <span className="text-xs text-slate-500 font-mono">{check.detail}</span>
+                  <span className="text-xs text-slate-400 font-mono">{check.detail}</span>
                 </div>
               ))}
             </div>
@@ -140,7 +140,7 @@ export default function HealthPage() {
         {state === 'idle' && (
           <div className="rounded-xl border border-slate-700/40 bg-slate-900/40 divide-y divide-slate-700/30">
             <div className="px-5 py-3.5">
-              <p className="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-0">Checks</p>
+              <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-0">Checks</p>
             </div>
             {[
               'dcyfr.io — Portal',

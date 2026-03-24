@@ -40,7 +40,7 @@ export default function CliPage() {
               {/* Command header */}
               <div className="border-b border-slate-700/40 px-5 py-4 flex flex-wrap items-center justify-between gap-3">
                 <code className="text-lg font-mono font-bold text-indigo-300">{cmd.command}</code>
-                <div className="flex items-center gap-2 text-xs text-slate-500">
+                <div className="flex items-center gap-2 text-xs text-slate-400">
                   <span className="border border-slate-700/40 rounded px-2 py-0.5">{cmd.package}</span>
                   <span className="border border-slate-700/40 rounded px-2 py-0.5">since {cmd.since}</span>
                 </div>
@@ -52,7 +52,7 @@ export default function CliPage() {
 
                 {/* Usage */}
                 <div>
-                  <p className="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">Usage</p>
+                  <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Usage</p>
                   <pre className="text-sm text-indigo-200 bg-indigo-950/40 border border-indigo-800/30 rounded-lg px-4 py-3 overflow-x-auto">
                     <code>{cmd.usage}</code>
                   </pre>
@@ -61,7 +61,7 @@ export default function CliPage() {
                 {/* Flags */}
                 {cmd.flags && cmd.flags.length > 0 && (
                   <div>
-                    <p className="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">Flags</p>
+                    <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Flags</p>
                     <div className="space-y-1.5">
                       {cmd.flags.map((f) => (
                         <div key={f.flag} className="flex flex-wrap items-start gap-2 text-sm">
@@ -89,7 +89,7 @@ export default function CliPage() {
 
                 {/* Examples */}
                 <div>
-                  <p className="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">Examples</p>
+                  <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Examples</p>
                   <div className="space-y-1.5">
                     {cmd.examples.map((ex, i) => (
                       <pre

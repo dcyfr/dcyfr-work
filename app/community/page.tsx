@@ -92,7 +92,7 @@ export default function CommunityPage() {
                     <h3 className="font-semibold text-slate-100 group-hover:text-white transition-colors">
                       {link.name}
                     </h3>
-                    <span className="text-xs text-slate-500 font-mono">{link.label}</span>
+                    <span className="text-xs text-slate-400 font-mono">{link.label}</span>
                   </div>
                   <p className="text-sm text-slate-400">{link.description}</p>
                 </div>
@@ -122,7 +122,7 @@ export default function CommunityPage() {
                   <p className="font-medium text-slate-200 group-hover:text-white transition-colors truncate">
                     {a.title}
                   </p>
-                  <p className="text-xs text-slate-500 mt-1">{a.category} · {a.readingTime} min read</p>
+                  <p className="text-xs text-slate-400 mt-1">{a.category} · {a.readingTime} min read</p>
                 </div>
                 <span className="shrink-0 text-indigo-400 text-sm">→</span>
               </a>

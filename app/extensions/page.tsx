@@ -62,7 +62,7 @@ export default function ExtensionsPage() {
         </div>
 
         {/* Count */}
-        <p className="text-sm text-slate-500 mb-6" aria-live="polite">
+        <p className="text-sm text-slate-400 mb-6" aria-live="polite">
           {filtered.length} extension{filtered.length !== 1 ? 's' : ''}
           {category !== 'All' && ` in ${category}`}
           {search && ` matching "${search}"`}
@@ -94,13 +94,13 @@ export default function ExtensionsPage() {
                     {ext.tags.slice(0, 4).map((tag) => (
                       <span
                         key={tag}
-                        className="text-xs text-slate-500 bg-slate-800/60 border border-slate-700/30 rounded-full px-2 py-0.5"
+                        className="text-xs text-slate-400 bg-slate-800/60 border border-slate-700/30 rounded-full px-2 py-0.5"
                       >
                         {tag}
                       </span>
                     ))}
                   </div>
-                  <div className="flex items-center justify-between text-xs text-slate-500">
+                  <div className="flex items-center justify-between text-xs text-slate-400">
                     <span>{ext.category}</span>
                     <div className="flex items-center gap-3">
                       <span>{'★'.repeat(Math.round(ext.rating))} {ext.rating.toFixed(1)}</span>
@@ -109,7 +109,7 @@ export default function ExtensionsPage() {
                   </div>
                 </div>
                 <div className="border-t border-slate-700/30 px-5 py-3 flex items-center justify-between">
-                  <span className="text-xs text-slate-500">
+                  <span className="text-xs text-slate-400">
                     {ext.installCount.toLocaleString()} installs
                   </span>
                   <a

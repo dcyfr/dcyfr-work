@@ -39,11 +39,11 @@ export default function RootLayout({
               <span>dcyfr<span className="text-indigo-400">.work</span></span>
             </Link>
             <div className="flex items-center gap-6 text-sm font-medium">
-              <Link href="/cli" className="text-slate-300 hover:text-slate-100 transition-colors">CLI Ref</Link>
-              <Link href="/extensions" className="text-slate-300 hover:text-slate-100 transition-colors">Extensions</Link>
-              <Link href="/profiles" className="text-slate-300 hover:text-slate-100 transition-colors">Profiles</Link>
-              <Link href="/community" className="text-slate-300 hover:text-slate-100 transition-colors">Community</Link>
-              <Link href="/health" className="text-slate-300 hover:text-slate-100 transition-colors">Health</Link>
+              <Link href="/cli" className="py-2 text-slate-300 hover:text-slate-100 transition-colors">CLI Ref</Link>
+              <Link href="/extensions" className="py-2 text-slate-300 hover:text-slate-100 transition-colors">Extensions</Link>
+              <Link href="/profiles" className="py-2 text-slate-300 hover:text-slate-100 transition-colors">Profiles</Link>
+              <Link href="/community" className="py-2 text-slate-300 hover:text-slate-100 transition-colors">Community</Link>
+              <Link href="/health" className="py-2 text-slate-300 hover:text-slate-100 transition-colors">Health</Link>
             </div>
           </nav>
         </header>
@@ -55,7 +55,7 @@ export default function RootLayout({
             <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
               <div>
                 <p className="font-semibold text-slate-300">dcyfr.work</p>
-                <p className="text-xs text-slate-500 mt-1">Developer Tools &amp; Identity Layer</p>
+                <p className="text-xs text-slate-400 mt-1">Developer Tools &amp; Identity Layer</p>
               </div>
               <nav className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-slate-400" aria-label="Footer navigation">
                 <Link href="/cli" className="hover:text-slate-200 transition-colors">CLI Reference</Link>
@@ -66,7 +66,7 @@ export default function RootLayout({
                 <a href="https://dcyfr.bot" className="hover:text-slate-200 transition-colors">dcyfr.bot</a>
               </nav>
             </div>
-            <div className="mt-6 pt-6 border-t border-indigo-900/30 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 text-xs text-slate-500">
+            <div className="mt-6 pt-6 border-t border-indigo-900/30 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 text-xs text-slate-400">
               <p>&copy; 2027 DCYFR Labs. All rights reserved.</p>
               <p>dcyfr.work — launching Q1 2027</p>
             </div>
