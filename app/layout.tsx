@@ -39,11 +39,11 @@ export default function RootLayout({
               <span>dcyfr<span className="text-indigo-400">.work</span></span>
             </Link>
             <div className="flex items-center gap-6 text-sm font-medium">
-              <Link href="/cli" className="py-3 text-slate-300 hover:text-slate-100 transition-colors">CLI Ref</Link>
-              <Link href="/extensions" className="py-3 text-slate-300 hover:text-slate-100 transition-colors">Extensions</Link>
-              <Link href="/profiles" className="py-3 text-slate-300 hover:text-slate-100 transition-colors">Profiles</Link>
-              <Link href="/community" className="py-3 text-slate-300 hover:text-slate-100 transition-colors">Community</Link>
-              <Link href="/health" className="py-3 text-slate-300 hover:text-slate-100 transition-colors">Health</Link>
+              <Link href="/cli" className="inline-flex items-center min-h-[44px] text-slate-300 hover:text-slate-100 transition-colors">CLI Ref</Link>
+              <Link href="/extensions" className="inline-flex items-center min-h-[44px] text-slate-300 hover:text-slate-100 transition-colors">Extensions</Link>
+              <Link href="/profiles" className="inline-flex items-center min-h-[44px] text-slate-300 hover:text-slate-100 transition-colors">Profiles</Link>
+              <Link href="/community" className="inline-flex items-center min-h-[44px] text-slate-300 hover:text-slate-100 transition-colors">Community</Link>
+              <Link href="/health" className="inline-flex items-center min-h-[44px] text-slate-300 hover:text-slate-100 transition-colors">Health</Link>
             </div>
           </nav>
         </header>
