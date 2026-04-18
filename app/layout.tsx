@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import Link from 'next/link';
+import { ThemeProvider } from '@/components/theme-provider';
 import './globals.css';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
@@ -24,8 +25,9 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={inter.variable}>
+    <html lang="en" suppressHydrationWarning className={`${inter.variable} theme-dcyfr-work`}>
       <body className="bg-slate-950 text-slate-50 min-h-screen flex flex-col font-sans">
+        <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
         <header className="border-b border-indigo-900/50 bg-slate-950/80 backdrop-blur-sm sticky top-0 z-50">
           <nav
             className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between"
@@ -72,6 +74,7 @@ export default function RootLayout({
             </div>
           </div>
         </footer>
+        </ThemeProvider>
       </body>
     </html>
   );
