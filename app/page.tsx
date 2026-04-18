@@ -3,6 +3,8 @@ import Link from 'next/link';
 import extensionsData from '@/data/extensions.json';
 import cliData from '@/data/cli-commands.json';
 import type { VsCodeExtension, CliCommand } from '@/lib/types';
+import { DcyfrButton } from '@/components/ui/dcyfr-button';
+import { DcyfrBadge } from '@/components/ui/dcyfr-badge';
 
 export const metadata: Metadata = {
   title: 'DCYFR Work — Developer Tools & Identity',
@@ -67,10 +69,17 @@ export default function HomePage() {
       {/* Hero */}
       <section className="border-b border-indigo-900/40 bg-gradient-to-b from-indigo-950/40 to-slate-950">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
-          <div className="inline-flex items-center gap-2 rounded-full border border-indigo-700/40 bg-indigo-950/60 px-3 py-1 text-xs text-indigo-300 mb-6">
-            <span className="w-1.5 h-1.5 rounded-full bg-indigo-400 animate-pulse" />
-            <span>Launching Q1 2027</span>
-          </div>
+          <DcyfrBadge
+            variant="secure"
+            size="md"
+            className="mb-6 rounded-full border-indigo-700/40 bg-indigo-950/60 text-indigo-300"
+          >
+            <span
+              className="w-1.5 h-1.5 rounded-full bg-indigo-400 animate-pulse"
+              aria-hidden="true"
+            />
+            Launching Q1 2027
+          </DcyfrBadge>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
             Developer Tools for the<br />
             <span className="text-indigo-400">DCYFR Ecosystem</span>
@@ -80,18 +89,12 @@ export default function HomePage() {
             tooling — everything you need to build with DCYFR.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-4">
-            <Link
-              href="/cli"
-              className="bg-indigo-600 hover:bg-indigo-500 text-white font-semibold px-6 py-3 rounded-lg transition-colors"
-            >
-              CLI Reference
-            </Link>
-            <Link
-              href="/extensions"
-              className="border border-indigo-600/50 hover:border-indigo-500 text-indigo-300 hover:text-indigo-200 font-semibold px-6 py-3 rounded-lg transition-colors"
-            >
-              Extensions
-            </Link>
+            <DcyfrButton asChild variant="brand" size="lg">
+              <Link href="/cli">CLI Reference</Link>
+            </DcyfrButton>
+            <DcyfrButton asChild variant="ghostly" size="lg">
+              <Link href="/extensions">Extensions</Link>
+            </DcyfrButton>
           </div>
         </div>
       </section>
@@ -111,9 +114,13 @@ export default function HomePage() {
                 <h3 className="font-semibold text-slate-100 group-hover:text-white transition-colors">
                   {s.title}
                 </h3>
-                <span className="text-xs text-indigo-400 bg-indigo-950/60 border border-indigo-800/40 rounded-full px-2 py-0.5">
+                <DcyfrBadge
+                  variant="secure"
+                  size="sm"
+                  className="shrink-0 rounded-full border-indigo-800/40 bg-indigo-950/60 text-indigo-400"
+                >
                   {s.badge}
-                </span>
+                </DcyfrBadge>
               </div>
               <p className="text-sm text-slate-400 leading-relaxed">{s.description}</p>
             </Link>
@@ -125,9 +132,11 @@ export default function HomePage() {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12">
         <div className="flex items-center justify-between mb-6">
           <h2 className="text-xl font-bold text-white">Featured Extensions</h2>
-          <Link href="/extensions" className="text-sm text-indigo-400 hover:text-indigo-300 transition-colors">
-            View all →
-          </Link>
+          <DcyfrButton asChild variant="ghostly" size="sm">
+            <Link href="/extensions" className="text-indigo-400">
+              View all →
+            </Link>
+          </DcyfrButton>
         </div>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {FEATURED_EXTENSIONS.map((ext) => (
@@ -158,9 +167,11 @@ export default function HomePage() {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
         <div className="flex items-center justify-between mb-6">
           <h2 className="text-xl font-bold text-white">Common CLI Commands</h2>
-          <Link href="/cli" className="text-sm text-indigo-400 hover:text-indigo-300 transition-colors">
-            View all →
-          </Link>
+          <DcyfrButton asChild variant="ghostly" size="sm">
+            <Link href="/cli" className="text-indigo-400">
+              View all →
+            </Link>
+          </DcyfrButton>
         </div>
         <div className="space-y-3">
           {FEATURED_COMMANDS.map((cmd) => (
@@ -188,13 +199,11 @@ export default function HomePage() {
             Sign in with GitHub, showcase your DCYFR projects, earn practitioner badges,
             and connect with employers hiring for AI-native engineering roles.
           </p>
-          <Link
-            href="/profiles"
-            className="inline-flex items-center gap-2 bg-indigo-700 hover:bg-indigo-600 text-white font-semibold px-6 py-3 rounded-lg transition-colors"
-          >
-            <span>Learn more</span>
-            <span aria-hidden="true">→</span>
-          </Link>
+          <DcyfrButton asChild variant="brand" size="lg">
+            <Link href="/profiles">
+              Learn more <span aria-hidden="true">→</span>
+            </Link>
+          </DcyfrButton>
         </div>
       </section>
     </>
