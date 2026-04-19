@@ -17,15 +17,15 @@ export default function CliPage() {
         {/* Header */}
         <div className="mb-10">
           <h1 className="text-3xl sm:text-4xl font-bold text-white mb-4">CLI Reference</h1>
-          <p className="text-lg text-slate-300 mb-4">
+          <p className="text-lg text-muted-foreground/80 mb-4">
             Complete command reference for{' '}
-            <code className="text-indigo-300 bg-indigo-950/60 border border-indigo-800/40 rounded px-1.5 py-0.5 text-sm">
+            <code className="text-primary/60 bg-primary/60 border border-primary/60/40 rounded px-1.5 py-0.5 text-sm">
               @dcyfr/ai-cli
             </code>.
           </p>
-          <div className="rounded-lg border border-slate-700/40 bg-slate-900/60 p-4">
-            <p className="text-xs text-slate-400 mb-2">Install</p>
-            <code className="text-sm text-indigo-300 font-mono">npm install -g @dcyfr/ai-cli</code>
+          <div className="rounded-lg border border-border/80/40 bg-card/60 p-4">
+            <p className="text-xs text-muted-foreground mb-2">Install</p>
+            <code className="text-sm text-primary/60 font-mono">npm install -g @dcyfr/ai-cli</code>
           </div>
         </div>
 
@@ -35,25 +35,25 @@ export default function CliPage() {
             <article
               key={cmd.id}
               id={cmd.id}
-              className="rounded-xl border border-slate-700/40 bg-slate-900/40 overflow-hidden"
+              className="rounded-xl border border-border/80/40 bg-card/40 overflow-hidden"
             >
               {/* Command header */}
-              <div className="border-b border-slate-700/40 px-5 py-4 flex flex-wrap items-center justify-between gap-3">
-                <code className="text-lg font-mono font-bold text-indigo-300">{cmd.command}</code>
-                <div className="flex items-center gap-2 text-xs text-slate-400">
-                  <span className="border border-slate-700/40 rounded px-2 py-0.5">{cmd.package}</span>
-                  <span className="border border-slate-700/40 rounded px-2 py-0.5">since {cmd.since}</span>
+              <div className="border-b border-border/80/40 px-5 py-4 flex flex-wrap items-center justify-between gap-3">
+                <code className="text-lg font-mono font-bold text-primary/60">{cmd.command}</code>
+                <div className="flex items-center gap-2 text-xs text-muted-foreground">
+                  <span className="border border-border/80/40 rounded px-2 py-0.5">{cmd.package}</span>
+                  <span className="border border-border/80/40 rounded px-2 py-0.5">since {cmd.since}</span>
                 </div>
               </div>
 
               <div className="px-5 py-4 space-y-4">
                 {/* Description */}
-                <p className="text-slate-300">{cmd.description}</p>
+                <p className="text-muted-foreground/80">{cmd.description}</p>
 
                 {/* Usage */}
                 <div>
-                  <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Usage</p>
-                  <pre className="text-sm text-indigo-200 bg-indigo-950/40 border border-indigo-800/30 rounded-lg px-4 py-3 overflow-x-auto">
+                  <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-2">Usage</p>
+                  <pre className="text-sm text-primary/50 bg-primary/40 border border-primary/60/30 rounded-lg px-4 py-3 overflow-x-auto">
                     <code>{cmd.usage}</code>
                   </pre>
                 </div>
@@ -61,16 +61,16 @@ export default function CliPage() {
                 {/* Flags */}
                 {cmd.flags && cmd.flags.length > 0 && (
                   <div>
-                    <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Flags</p>
+                    <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-2">Flags</p>
                     <div className="space-y-1.5">
                       {cmd.flags.map((f) => (
                         <div key={f.flag} className="flex flex-wrap items-start gap-2 text-sm">
                           <div className="flex items-center gap-1.5 shrink-0">
-                            <code className="text-indigo-300 bg-indigo-950/40 border border-indigo-800/30 rounded px-2 py-0.5 font-mono text-xs">
+                            <code className="text-primary/60 bg-primary/40 border border-primary/60/30 rounded px-2 py-0.5 font-mono text-xs">
                               {f.flag}
                             </code>
                             {f.alias && (
-                              <code className="text-slate-400 bg-slate-800/40 border border-slate-700/30 rounded px-2 py-0.5 font-mono text-xs">
+                              <code className="text-muted-foreground bg-muted/40 border border-border/80/30 rounded px-2 py-0.5 font-mono text-xs">
                                 {f.alias}
                               </code>
                             )}
@@ -80,7 +80,7 @@ export default function CliPage() {
                               </span>
                             )}
                           </div>
-                          <span className="text-slate-400">{f.description}</span>
+                          <span className="text-muted-foreground">{f.description}</span>
                         </div>
                       ))}
                     </div>
@@ -89,12 +89,12 @@ export default function CliPage() {
 
                 {/* Examples */}
                 <div>
-                  <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Examples</p>
+                  <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-2">Examples</p>
                   <div className="space-y-1.5">
                     {cmd.examples.map((ex, i) => (
                       <pre
                         key={i}
-                        className="text-sm text-slate-200 bg-slate-800/60 border border-slate-700/40 rounded-lg px-4 py-2.5 overflow-x-auto"
+                        className="text-sm text-muted-foreground/70 bg-muted/60 border border-border/80/40 rounded-lg px-4 py-2.5 overflow-x-auto"
                       >
                         <code>{ex}</code>
                       </pre>

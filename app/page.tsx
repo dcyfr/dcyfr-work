@@ -20,7 +20,7 @@ const SECTIONS = [
     title: 'CLI Reference',
     description:
       'Complete reference for @dcyfr/ai-cli commands — agent run, delegate, workspace health, OpenSpec, and more.',
-    color: 'border-indigo-700/40 bg-indigo-950/40 hover:border-indigo-600/60',
+    color: 'border-primary/50/40 bg-primary/40 hover:border-primary/40/60',
     badge: `${(cliData as CliCommand[]).length} commands`,
   },
   {
@@ -29,7 +29,7 @@ const SECTIONS = [
     title: 'VS Code Extensions',
     description:
       'Official DCYFR extensions for Claude Code integration, workspace status, snippet runner, and TLP classification labels.',
-    color: 'border-indigo-700/40 bg-indigo-950/40 hover:border-indigo-600/60',
+    color: 'border-primary/50/40 bg-primary/40 hover:border-primary/40/60',
     badge: `${(extensionsData as VsCodeExtension[]).length} extensions`,
   },
   {
@@ -38,7 +38,7 @@ const SECTIONS = [
     title: 'Developer Profiles',
     description:
       'Sign in with GitHub to create your DCYFR developer profile. Showcase projects, earn badges, and appear on the contributor leaderboard.',
-    color: 'border-indigo-700/40 bg-indigo-950/40 hover:border-indigo-600/60',
+    color: 'border-primary/50/40 bg-primary/40 hover:border-primary/40/60',
     badge: 'Coming Q1 2027',
   },
   {
@@ -47,7 +47,7 @@ const SECTIONS = [
     title: 'Community',
     description:
       'Connect with other DCYFR developers. Job board, contributor leaderboard, article highlights, and community links.',
-    color: 'border-indigo-700/40 bg-indigo-950/40 hover:border-indigo-600/60',
+    color: 'border-primary/50/40 bg-primary/40 hover:border-primary/40/60',
     badge: 'Coming Q1 2027',
   },
   {
@@ -56,7 +56,7 @@ const SECTIONS = [
     title: 'Workspace Health',
     description:
       'One-click reachability check across all 6 DCYFR TLDs. Export diagnostic report as JSON for CI checks or incident response.',
-    color: 'border-indigo-700/40 bg-indigo-950/40 hover:border-indigo-600/60',
+    color: 'border-primary/50/40 bg-primary/40 hover:border-primary/40/60',
     badge: '6 checks',
   },
 ];
@@ -68,24 +68,24 @@ export default function HomePage() {
   return (
     <>
       {/* Hero */}
-      <section className="border-b border-indigo-900/40 bg-gradient-to-b from-indigo-950/40 to-slate-950">
+      <section className="border-b border-primary/80/40 bg-gradient-to-b from-primary/40 to-background">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
           <DcyfrBadge
             variant="secure"
             size="md"
-            className="mb-6 rounded-full border-indigo-700/40 bg-indigo-950/60 text-indigo-300"
+            className="mb-6 rounded-full border-primary/50/40 bg-primary/60 text-primary/60"
           >
             <span
-              className="w-1.5 h-1.5 rounded-full bg-indigo-400 animate-pulse"
+              className="w-1.5 h-1.5 rounded-full bg-primary/40 animate-pulse"
               aria-hidden="true"
             />
             Launching Q1 2027
           </DcyfrBadge>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
             Developer Tools for the<br />
-            <span className="text-indigo-400">DCYFR Ecosystem</span>
+            <span className="text-primary/70">DCYFR Ecosystem</span>
           </h1>
-          <p className="text-lg sm:text-xl text-slate-300 max-w-2xl mx-auto mb-10">
+          <p className="text-lg sm:text-xl text-muted-foreground/80 max-w-2xl mx-auto mb-10">
             CLI reference, VS Code extensions, developer identity, and workspace health
             tooling — everything you need to build with DCYFR.
           </p>
@@ -111,20 +111,20 @@ export default function HomePage() {
               href={s.href}
               className={`group rounded-xl border p-5 transition-all ${s.color}`}
             >
-              <div className="text-2xl mb-3 text-indigo-400 font-mono">{s.icon}</div>
+              <div className="text-2xl mb-3 text-primary/70 font-mono">{s.icon}</div>
               <div className="flex items-center justify-between mb-2">
-                <h3 className="font-semibold text-slate-100 group-hover:text-white transition-colors">
+                <h3 className="font-semibold text-muted-foreground/60 group-hover:text-white transition-colors">
                   {s.title}
                 </h3>
                 <DcyfrBadge
                   variant="secure"
                   size="sm"
-                  className="shrink-0 rounded-full border-indigo-800/40 bg-indigo-950/60 text-indigo-400"
+                  className="shrink-0 rounded-full border-primary/60/40 bg-primary/60 text-primary/70"
                 >
                   {s.badge}
                 </DcyfrBadge>
               </div>
-              <p className="text-sm text-slate-400 leading-relaxed">{s.description}</p>
+              <p className="text-sm text-muted-foreground leading-relaxed">{s.description}</p>
             </Link>
           ))}
         </div>
@@ -135,7 +135,7 @@ export default function HomePage() {
         <div className="flex items-center justify-between mb-6">
           <h2 className="text-xl font-bold text-white">Featured Extensions</h2>
           <DcyfrButton asChild variant="ghostly" size="sm">
-            <Link href="/extensions" className="text-indigo-400">
+            <Link href="/extensions" className="text-primary/70">
               View all →
             </Link>
           </DcyfrButton>
@@ -147,16 +147,16 @@ export default function HomePage() {
               href={ext.marketplaceUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="group rounded-xl border border-slate-700/40 bg-slate-900/40 hover:border-indigo-700/50 p-5 transition-all"
+              className="group rounded-xl border border-border/80/40 bg-card/40 hover:border-primary/50/50 p-5 transition-all"
             >
               <div className="flex items-start justify-between mb-3">
-                <h3 className="font-semibold text-slate-100 group-hover:text-white transition-colors leading-tight">
+                <h3 className="font-semibold text-muted-foreground/60 group-hover:text-white transition-colors leading-tight">
                   {ext.name}
                 </h3>
-                <span className="shrink-0 ml-2 text-xs text-slate-400 font-mono">v{ext.version}</span>
+                <span className="shrink-0 ml-2 text-xs text-muted-foreground font-mono">v{ext.version}</span>
               </div>
-              <p className="text-sm text-slate-400 mb-3 leading-relaxed line-clamp-2">{ext.description}</p>
-              <div className="flex items-center justify-between text-xs text-slate-400">
+              <p className="text-sm text-muted-foreground mb-3 leading-relaxed line-clamp-2">{ext.description}</p>
+              <div className="flex items-center justify-between text-xs text-muted-foreground">
                 <span>{ext.category}</span>
                 <span>{'★'.repeat(Math.round(ext.rating))} {ext.rating}</span>
               </div>
@@ -170,7 +170,7 @@ export default function HomePage() {
         <div className="flex items-center justify-between mb-6">
           <h2 className="text-xl font-bold text-white">Common CLI Commands</h2>
           <DcyfrButton asChild variant="ghostly" size="sm">
-            <Link href="/cli" className="text-indigo-400">
+            <Link href="/cli" className="text-primary/70">
               View all →
             </Link>
           </DcyfrButton>
@@ -180,12 +180,12 @@ export default function HomePage() {
             <Link
               key={cmd.id}
               href={`/cli#${cmd.id}`}
-              className="group flex items-start gap-4 rounded-xl border border-slate-700/40 bg-slate-900/40 hover:border-indigo-700/50 p-4 transition-all"
+              className="group flex items-start gap-4 rounded-xl border border-border/80/40 bg-card/40 hover:border-primary/50/50 p-4 transition-all"
             >
-              <code className="shrink-0 font-mono text-indigo-300 text-sm bg-indigo-950/60 border border-indigo-800/40 rounded px-2.5 py-1 group-hover:border-indigo-700/60 transition-colors">
+              <code className="shrink-0 font-mono text-primary/60 text-sm bg-primary/60 border border-primary/60/40 rounded px-2.5 py-1 group-hover:border-primary/50/60 transition-colors">
                 {cmd.command}
               </code>
-              <p className="text-sm text-slate-400 leading-relaxed group-hover:text-slate-300 transition-colors">
+              <p className="text-sm text-muted-foreground leading-relaxed group-hover:text-muted-foreground/80 transition-colors">
                 {cmd.description}
               </p>
             </Link>
@@ -194,10 +194,10 @@ export default function HomePage() {
       </section>
 
       {/* CTA — profiles preview */}
-      <section className="border-t border-indigo-900/40 bg-indigo-950/20">
+      <section className="border-t border-primary/80/40 bg-primary/20">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-16 text-center">
           <h2 className="text-2xl font-bold text-white mb-4">Developer Profiles — Coming Q1 2027</h2>
-          <p className="text-slate-300 mb-8">
+          <p className="text-muted-foreground/80 mb-8">
             Sign in with GitHub, showcase your DCYFR projects, earn practitioner badges,
             and connect with employers hiring for AI-native engineering roles.
           </p>

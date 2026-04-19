@@ -28,7 +28,7 @@ export default function ExtensionsPage() {
         {/* Header */}
         <div className="mb-10">
           <h1 className="text-3xl sm:text-4xl font-bold text-white mb-4">VS Code Extensions</h1>
-          <p className="text-lg text-slate-300">
+          <p className="text-lg text-muted-foreground/80">
             Official DCYFR extensions for VS Code — Claude Code integration, workspace tooling,
             and developer ergonomics.
           </p>
@@ -41,7 +41,7 @@ export default function ExtensionsPage() {
             placeholder="Search extensions…"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            className="flex-1 bg-slate-900/60 border border-slate-700/40 rounded-lg px-4 py-2.5 text-sm text-slate-200 placeholder-slate-500 focus:outline-none focus:border-indigo-600/60"
+            className="flex-1 bg-card/60 border border-border/80/40 rounded-lg px-4 py-2.5 text-sm text-muted-foreground/70 placeholder:text-muted-foreground/60 focus:outline-none focus:border-primary/40/60"
             aria-label="Search extensions"
           />
           <div className="flex flex-wrap gap-2" role="group" aria-label="Filter by category">
@@ -51,8 +51,8 @@ export default function ExtensionsPage() {
                 onClick={() => setCategory(cat)}
                 className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-colors ${
                   category === cat
-                    ? 'bg-indigo-600 text-white'
-                    : 'bg-slate-800/60 border border-slate-700/40 text-slate-400 hover:text-slate-200 hover:border-slate-600/60'
+                    ? 'bg-primary/60 text-white'
+                    : 'bg-muted/60 border border-border/80/40 text-muted-foreground hover:text-muted-foreground/70 hover:border-border/60/60'
                 }`}
               >
                 {cat}
@@ -62,7 +62,7 @@ export default function ExtensionsPage() {
         </div>
 
         {/* Count */}
-        <p className="text-sm text-slate-400 mb-6" aria-live="polite">
+        <p className="text-sm text-muted-foreground mb-6" aria-live="polite">
           {filtered.length} extension{filtered.length !== 1 ? 's' : ''}
           {category !== 'All' && ` in ${category}`}
           {search && ` matching "${search}"`}
@@ -70,37 +70,37 @@ export default function ExtensionsPage() {
 
         {/* Grid */}
         {filtered.length === 0 ? (
-          <p className="text-slate-400 text-center py-16">No extensions match your filters.</p>
+          <p className="text-muted-foreground text-center py-16">No extensions match your filters.</p>
         ) : (
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {filtered.map((ext) => (
               <article
                 key={ext.id}
-                className="group rounded-xl border border-slate-700/40 bg-slate-900/40 hover:border-indigo-700/50 transition-all overflow-hidden flex flex-col"
+                className="group rounded-xl border border-border/80/40 bg-card/40 hover:border-primary/50/50 transition-all overflow-hidden flex flex-col"
               >
                 <div className="p-5 flex-1">
                   <div className="flex items-start justify-between mb-2">
-                    <h2 className="font-semibold text-slate-100 group-hover:text-white transition-colors leading-tight">
+                    <h2 className="font-semibold text-muted-foreground/60 group-hover:text-white transition-colors leading-tight">
                       {ext.name}
                     </h2>
                     {ext.featured && (
-                      <span className="shrink-0 ml-2 text-xs text-indigo-300 bg-indigo-950/60 border border-indigo-700/40 rounded-full px-2 py-0.5">
+                      <span className="shrink-0 ml-2 text-xs text-primary/60 bg-primary/60 border border-primary/50/40 rounded-full px-2 py-0.5">
                         Featured
                       </span>
                     )}
                   </div>
-                  <p className="text-sm text-slate-400 leading-relaxed mb-4">{ext.description}</p>
+                  <p className="text-sm text-muted-foreground leading-relaxed mb-4">{ext.description}</p>
                   <div className="flex flex-wrap gap-1.5 mb-4">
                     {ext.tags.slice(0, 4).map((tag) => (
                       <span
                         key={tag}
-                        className="text-xs text-slate-400 bg-slate-800/60 border border-slate-700/30 rounded-full px-2 py-0.5"
+                        className="text-xs text-muted-foreground bg-muted/60 border border-border/80/30 rounded-full px-2 py-0.5"
                       >
                         {tag}
                       </span>
                     ))}
                   </div>
-                  <div className="flex items-center justify-between text-xs text-slate-400">
+                  <div className="flex items-center justify-between text-xs text-muted-foreground">
                     <span>{ext.category}</span>
                     <div className="flex items-center gap-3">
                       <span>{'★'.repeat(Math.round(ext.rating))} {ext.rating.toFixed(1)}</span>
@@ -108,15 +108,15 @@ export default function ExtensionsPage() {
                     </div>
                   </div>
                 </div>
-                <div className="border-t border-slate-700/30 px-5 py-3 flex items-center justify-between">
-                  <span className="text-xs text-slate-400">
+                <div className="border-t border-border/80/30 px-5 py-3 flex items-center justify-between">
+                  <span className="text-xs text-muted-foreground">
                     {ext.installCount.toLocaleString()} installs
                   </span>
                   <a
                     href={ext.marketplaceUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-xs font-medium text-indigo-400 hover:text-indigo-300 transition-colors"
+                    className="text-xs font-medium text-primary/70 hover:text-primary/60 transition-colors"
                   >
                     Install →
                   </a>
