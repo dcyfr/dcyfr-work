@@ -11,8 +11,8 @@ export const metadata: Metadata = {
 // Core Contributor→warning). The other 3 (RAG=violet, Code Gen=cyan,
 // Early Adopter=rose) are deliberate carveouts — award palettes benefit
 // from 6 unique hues that no subset of the identity semantic tokens can
-// provide. See openspec/changes/dcyfr-build-work-hardcoded-colors §3.2.
-// eslint-disable-next-line dcyfr-local/no-hardcoded-colors
+// provide. See openspec/changes/archive/2026-04-19-dcyfr-build-work-hardcoded-colors §3.2.
+// Lint exception recorded in the archived openspec change.
 const BADGES = [
   {
     name: 'Agent Practitioner',
