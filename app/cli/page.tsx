@@ -75,7 +75,7 @@ export default function CliPage() {
                               </code>
                             )}
                             {f.required && (
-                              <span className="text-xs text-amber-400 border border-amber-700/40 rounded px-1.5 py-0.5">
+                              <span className="text-xs text-warning border border-warning/40 rounded px-1.5 py-0.5">
                                 required
                               </span>
                             )}

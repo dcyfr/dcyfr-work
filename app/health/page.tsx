@@ -7,14 +7,14 @@ type RunState = 'idle' | 'running' | 'done' | 'error';
 
 const STATUS_STYLES = {
   healthy: { label: 'Healthy', color: 'text-emerald-400', bg: 'border-emerald-700/40 bg-emerald-950/40' },
-  warning: { label: 'Warning', color: 'text-amber-400', bg: 'border-amber-700/40 bg-amber-950/40' },
-  critical: { label: 'Critical', color: 'text-red-400', bg: 'border-red-700/40 bg-red-950/40' },
+  warning: { label: 'Warning', color: 'text-warning', bg: 'border-warning/40 bg-warning/40' },
+  critical: { label: 'Critical', color: 'text-destructive', bg: 'border-destructive/40 bg-destructive/40' },
 };
 
 const CHECK_STYLES = {
   pass: { label: '✓', color: 'text-emerald-400' },
-  warn: { label: '⚠', color: 'text-amber-400' },
-  fail: { label: '✕', color: 'text-red-400' },
+  warn: { label: '⚠', color: 'text-warning' },
+  fail: { label: '✕', color: 'text-destructive' },
 };
 
 export default function HealthPage() {
@@ -90,7 +90,7 @@ export default function HealthPage() {
 
         {/* Error state */}
         {state === 'error' && (
-          <div className="rounded-xl border border-red-700/40 bg-red-950/30 px-5 py-4 mb-6 text-red-300 text-sm">
+          <div className="rounded-xl border border-destructive/40 bg-destructive/30 px-5 py-4 mb-6 text-destructive text-sm">
             Health check failed: {errorMsg}
           </div>
         )}

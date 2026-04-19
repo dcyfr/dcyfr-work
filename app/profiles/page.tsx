@@ -35,7 +35,7 @@ const BADGES = [
     name: 'Core Contributor',
     description: 'Merged 3+ pull requests into a DCYFR open-source repository.',
     icon: '✦',
-    color: 'border-amber-700/40 bg-amber-950/40 text-amber-300',
+    color: 'border-warning/40 bg-warning/40 text-warning',
   },
   {
     name: 'Early Adopter',
