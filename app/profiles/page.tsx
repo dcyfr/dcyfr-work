@@ -67,7 +67,7 @@ export default function ProfilesPage() {
 
         {/* Header */}
         <div className="mb-10">
-          <h1 className="text-3xl sm:text-4xl font-bold text-white mb-4">Developer Profiles</h1>
+          <h1 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">Developer Profiles</h1>
           <p className="text-lg text-muted-foreground/80">
             Your DCYFR identity layer. Sign in with GitHub to create a profile, showcase projects
             built with DCYFR tools, earn practitioner badges, and connect with employers hiring
@@ -112,7 +112,7 @@ export default function ProfilesPage() {
 
         {/* Badge showcase */}
         <div className="mb-10">
-          <h2 className="text-xl font-bold text-white mb-6">Practitioner Badges</h2>
+          <h2 className="text-xl font-bold text-foreground mb-6">Practitioner Badges</h2>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {BADGES.map((badge) => (
               <div
@@ -129,7 +129,7 @@ export default function ProfilesPage() {
 
         {/* Privacy */}
         <div className="rounded-xl border border-border/80/40 bg-card/40 p-5">
-          <h2 className="font-semibold text-white mb-2">Privacy First</h2>
+          <h2 className="font-semibold text-foreground mb-2">Privacy First</h2>
           <p className="text-sm text-muted-foreground">
             Profiles are public by default but can be set to private. We only store your GitHub
             username, display name, and bio — no email, no private repo data. Delete your profile

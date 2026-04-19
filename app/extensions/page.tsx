@@ -27,7 +27,7 @@ export default function ExtensionsPage() {
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="mb-10">
-          <h1 className="text-3xl sm:text-4xl font-bold text-white mb-4">VS Code Extensions</h1>
+          <h1 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">VS Code Extensions</h1>
           <p className="text-lg text-muted-foreground/80">
             Official DCYFR extensions for VS Code — Claude Code integration, workspace tooling,
             and developer ergonomics.
@@ -51,7 +51,7 @@ export default function ExtensionsPage() {
                 onClick={() => setCategory(cat)}
                 className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-colors ${
                   category === cat
-                    ? 'bg-primary/60 text-white'
+                    ? 'bg-primary/60 text-foreground'
                     : 'bg-muted/60 border border-border/80/40 text-muted-foreground hover:text-muted-foreground/70 hover:border-border/60/60'
                 }`}
               >
@@ -80,7 +80,7 @@ export default function ExtensionsPage() {
               >
                 <div className="p-5 flex-1">
                   <div className="flex items-start justify-between mb-2">
-                    <h2 className="font-semibold text-muted-foreground/60 group-hover:text-white transition-colors leading-tight">
+                    <h2 className="font-semibold text-muted-foreground/60 group-hover:text-foreground transition-colors leading-tight">
                       {ext.name}
                     </h2>
                     {ext.featured && (

@@ -81,7 +81,7 @@ export default function HomePage() {
             />
             Launching Q1 2027
           </DcyfrBadge>
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground leading-tight mb-6">
             Developer Tools for the<br />
             <span className="text-primary/70">DCYFR Ecosystem</span>
           </h1>
@@ -103,7 +103,7 @@ export default function HomePage() {
 
       {/* Section cards */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <h2 className="text-2xl font-bold text-white mb-8">What&apos;s on dcyfr.work</h2>
+        <h2 className="text-2xl font-bold text-foreground mb-8">What&apos;s on dcyfr.work</h2>
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {SECTIONS.map((s) => (
             <Link
@@ -113,7 +113,7 @@ export default function HomePage() {
             >
               <div className="text-2xl mb-3 text-primary/70 font-mono">{s.icon}</div>
               <div className="flex items-center justify-between mb-2">
-                <h3 className="font-semibold text-muted-foreground/60 group-hover:text-white transition-colors">
+                <h3 className="font-semibold text-muted-foreground/60 group-hover:text-foreground transition-colors">
                   {s.title}
                 </h3>
                 <DcyfrBadge
@@ -133,7 +133,7 @@ export default function HomePage() {
       {/* Featured Extensions */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12">
         <div className="flex items-center justify-between mb-6">
-          <h2 className="text-xl font-bold text-white">Featured Extensions</h2>
+          <h2 className="text-xl font-bold text-foreground">Featured Extensions</h2>
           <DcyfrButton asChild variant="ghostly" size="sm">
             <Link href="/extensions" className="text-primary/70">
               View all →
@@ -150,7 +150,7 @@ export default function HomePage() {
               className="group rounded-xl border border-border/80/40 bg-card/40 hover:border-primary/50/50 p-5 transition-all"
             >
               <div className="flex items-start justify-between mb-3">
-                <h3 className="font-semibold text-muted-foreground/60 group-hover:text-white transition-colors leading-tight">
+                <h3 className="font-semibold text-muted-foreground/60 group-hover:text-foreground transition-colors leading-tight">
                   {ext.name}
                 </h3>
                 <span className="shrink-0 ml-2 text-xs text-muted-foreground font-mono">v{ext.version}</span>
@@ -168,7 +168,7 @@ export default function HomePage() {
       {/* Featured CLI Commands */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
         <div className="flex items-center justify-between mb-6">
-          <h2 className="text-xl font-bold text-white">Common CLI Commands</h2>
+          <h2 className="text-xl font-bold text-foreground">Common CLI Commands</h2>
           <DcyfrButton asChild variant="ghostly" size="sm">
             <Link href="/cli" className="text-primary/70">
               View all →
@@ -196,7 +196,7 @@ export default function HomePage() {
       {/* CTA — profiles preview */}
       <section className="border-t border-primary/80/40 bg-primary/20">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-16 text-center">
-          <h2 className="text-2xl font-bold text-white mb-4">Developer Profiles — Coming Q1 2027</h2>
+          <h2 className="text-2xl font-bold text-foreground mb-4">Developer Profiles — Coming Q1 2027</h2>
           <p className="text-muted-foreground/80 mb-8">
             Sign in with GitHub, showcase your DCYFR projects, earn practitioner badges,
             and connect with employers hiring for AI-native engineering roles.

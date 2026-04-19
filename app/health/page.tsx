@@ -54,7 +54,7 @@ export default function HealthPage() {
       <div className="max-w-3xl mx-auto">
         {/* Header */}
         <div className="mb-10">
-          <h1 className="text-3xl sm:text-4xl font-bold text-white mb-4">Workspace Health Checker</h1>
+          <h1 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">Workspace Health Checker</h1>
           <p className="text-lg text-muted-foreground/80">
             Verify reachability of all DCYFR TLD endpoints. Results export as JSON for
             debugging, incident reports, or CI checks.
@@ -66,12 +66,12 @@ export default function HealthPage() {
           <button
             onClick={runCheck}
             disabled={state === 'running'}
-            className="flex items-center gap-2 bg-primary/60 hover:bg-primary/50 disabled:bg-primary/80 disabled:cursor-not-allowed text-white font-semibold px-6 py-3 rounded-lg transition-colors"
+            className="flex items-center gap-2 bg-primary/60 hover:bg-primary/50 disabled:bg-primary/80 disabled:cursor-not-allowed text-foreground font-semibold px-6 py-3 rounded-lg transition-colors"
             aria-busy={state === 'running'}
           >
             {state === 'running' ? (
               <>
-                <span className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" aria-hidden="true" />
+                <span className="w-4 h-4 border-2 border-foreground/30 border-t-foreground rounded-full animate-spin" aria-hidden="true" />
                 Running checks…
               </>
             ) : (

@@ -71,6 +71,12 @@
   /*
    * Identity: professional / career portal — navy + gold, light-default.
    * Source: docs/dcyfr-workspace/sites/dcyfr-work.md
+   *
+   * Structure: unconditional block holds brand-identity vars that apply in
+   * BOTH themes (radius, fonts, accent hue). Light-only surface tints
+   * (--muted*, --primary) stay here since `:root` is the light baseline.
+   * Dark scope below overrides surface tokens so cards/muted surfaces
+   * don't flash white in dark mode — previously clobbered `.dark`'s values.
    */
   .theme-dcyfr-work {
     --primary: 218 85% 18%;
@@ -82,6 +88,14 @@
     --muted-foreground: 215 19% 35%;
     --font-sans: 'Inter', 'Geist', ui-sans-serif, system-ui, sans-serif;
     --font-mono: 'Geist Mono', ui-monospace, monospace;
+  }
+
+  .theme-dcyfr-work.dark,
+  .dark .theme-dcyfr-work {
+    --primary: 218 75% 65%;
+    --primary-foreground: 218 50% 10%;
+    --muted: 218 25% 18%;
+    --muted-foreground: 218 15% 65%;
   }
 }
 

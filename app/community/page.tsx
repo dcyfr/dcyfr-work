@@ -67,7 +67,7 @@ export default function CommunityPage() {
 
         {/* Header */}
         <div className="mb-10">
-          <h1 className="text-3xl sm:text-4xl font-bold text-white mb-4">Community</h1>
+          <h1 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">Community</h1>
           <p className="text-lg text-muted-foreground/80">
             Connect with other developers building on the DCYFR ecosystem. Ask questions,
             share projects, and find collaborators.
@@ -76,7 +76,7 @@ export default function CommunityPage() {
 
         {/* Community links */}
         <div className="mb-12">
-          <h2 className="text-xl font-bold text-white mb-6">Join the Conversation</h2>
+          <h2 className="text-xl font-bold text-foreground mb-6">Join the Conversation</h2>
           <div className="space-y-3">
             {COMMUNITY_LINKS.map((link) => (
               <a
@@ -89,7 +89,7 @@ export default function CommunityPage() {
                 <span className="shrink-0 text-2xl font-mono text-primary/70 mt-0.5">{link.icon}</span>
                 <div className="flex-1">
                   <div className="flex items-baseline justify-between gap-2 mb-1">
-                    <h3 className="font-semibold text-muted-foreground/60 group-hover:text-white transition-colors">
+                    <h3 className="font-semibold text-muted-foreground/60 group-hover:text-foreground transition-colors">
                       {link.name}
                     </h3>
                     <span className="text-xs text-muted-foreground font-mono">{link.label}</span>
@@ -104,7 +104,7 @@ export default function CommunityPage() {
         {/* Curated articles */}
         <div className="mb-12">
           <div className="flex items-center justify-between mb-6">
-            <h2 className="text-xl font-bold text-white">Article Highlights</h2>
+            <h2 className="text-xl font-bold text-foreground">Article Highlights</h2>
             <a href="https://dcyfr.tech/articles" className="text-sm text-primary/70 hover:text-primary/60 transition-colors">
               All articles →
             </a>
@@ -119,7 +119,7 @@ export default function CommunityPage() {
                 className="group flex items-center justify-between gap-4 rounded-xl border border-border/80/40 bg-card/40 hover:border-primary/50/50 px-5 py-4 transition-all"
               >
                 <div className="flex-1 min-w-0">
-                  <p className="font-medium text-muted-foreground/70 group-hover:text-white transition-colors truncate">
+                  <p className="font-medium text-muted-foreground/70 group-hover:text-foreground transition-colors truncate">
                     {a.title}
                   </p>
                   <p className="text-xs text-muted-foreground mt-1">{a.category} · {a.readingTime} min read</p>
@@ -133,7 +133,7 @@ export default function CommunityPage() {
         {/* Job board — coming soon */}
         <div className="rounded-xl border border-border/80/40 bg-card/40 p-6 text-center">
           <div className="text-3xl font-mono text-muted-foreground mb-3">▣</div>
-          <h2 className="font-semibold text-white mb-2">Job Board — Coming Q1 2027</h2>
+          <h2 className="font-semibold text-foreground mb-2">Job Board — Coming Q1 2027</h2>
           <p className="text-sm text-muted-foreground max-w-md mx-auto">
             A curated board of roles specifically seeking developers with DCYFR ecosystem experience —
             AI-native engineering, agent orchestration, RAG pipeline development, and infrastructure.

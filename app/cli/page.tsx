@@ -16,7 +16,7 @@ export default function CliPage() {
       <div className="max-w-4xl mx-auto">
         {/* Header */}
         <div className="mb-10">
-          <h1 className="text-3xl sm:text-4xl font-bold text-white mb-4">CLI Reference</h1>
+          <h1 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">CLI Reference</h1>
           <p className="text-lg text-muted-foreground/80 mb-4">
             Complete command reference for{' '}
             <code className="text-primary/60 bg-primary/60 border border-primary/60/40 rounded px-1.5 py-0.5 text-sm">
