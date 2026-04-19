@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import { ThemeProvider } from '@/components/theme-provider';
 import { PageShell, SiteNav, SiteFooter } from '@/components/chrome';
+import { DcyfrToaster } from '@/components/ui/dcyfr-sonner';
 import './globals.css';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
@@ -81,6 +82,7 @@ export default function RootLayout({
           >
             {children}
           </PageShell>
+          <DcyfrToaster />
         </ThemeProvider>
       </body>
     </html>

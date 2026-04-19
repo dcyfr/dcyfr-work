@@ -5,6 +5,7 @@ import cliData from '@/data/cli-commands.json';
 import type { VsCodeExtension, CliCommand } from '@/lib/types';
 import { DcyfrButton } from '@/components/ui/dcyfr-button';
 import { DcyfrBadge } from '@/components/ui/dcyfr-badge';
+import { ContactDialog } from '@/components/ContactDialog';
 
 export const metadata: Metadata = {
   title: 'DCYFR Work — Developer Tools & Identity',
@@ -95,6 +96,7 @@ export default function HomePage() {
             <DcyfrButton asChild variant="ghostly" size="lg">
               <Link href="/extensions">Extensions</Link>
             </DcyfrButton>
+            <ContactDialog triggerVariant="secure" triggerSize="lg" />
           </div>
         </div>
       </section>
